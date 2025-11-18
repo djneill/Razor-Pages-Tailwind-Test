@@ -4,8 +4,28 @@
     ViewData["Title"] = "Address";
 }
 
-<h1 class="text-center text-4xl">@ViewData["Title"]</h1>
+<h1 class="text-center text-4xl">There's nothing suspicious here, where do you want your cookies?</h1>
 
-<div>
-    
+<div class="flex justify-center items-center p-4">
+    <form method="post" class="flex-col">
+    <div>
+        <input type="text" class="border-2 m-4 p-1" asp-for="StreetAddress" placeholder="Street Address" />
+        <input type="text" class="border-2 m-4 p-1" asp-for="City" placeholder="City" />
+    </div>
+    <div>
+        <input type="text" class="border-2 m-4 p-1" asp-for="State" placeholder="State" />
+        <input type="text" class="border-2 m-4 p-1" asp-for="Zipcode" placeholder="Zipcode" />
+    </div>
+    <div>
+        <button type="submit" class="bg-cyan-400 w-md py-4 border-2 rounded-md font-bold">Submit</button>
+    </div>
+    </form>
+</div>
+
+<div class="flex-col justify-center items-center p-4">
+    <h2 class="text-2xl text-center">Cookies in route to:</h2>
+    <div class="flex-col justify-center text-center">
+        <h3>@Model.StreetAddress</h3>
+        <h3>@Model.City, @Model.State, @Model.Zipcode</h3>
+    </div>
 </div>
